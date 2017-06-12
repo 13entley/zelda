@@ -7,7 +7,7 @@
     <title>Zelda | Cooking Recipes</title>
 </head>
 <body>
-
+<script src="js/jquery-3.2.1.js"></script>
 <div class="zelda">
     <div class="topparallax">
         <div class="navigation">
@@ -36,28 +36,25 @@
                     </select>
                     <button id="submit" name="submit">Let's Cook!</button>
                 </form>
-
             </div>
         </div>
     </div>
     <div class="midparallax">
         <div class="parallaxpicture">
-            <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br>
+
         </div>
     </div>
     <div class="botparallax">
         <br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <div id="myDiv"></div>
+        <br><br><br><br><br>
         <div class="bottompage">
+
             <div class="returndata">
                 <?php // return the results from a selected ingredient / ingredients?>
                 <h2 class="formheader">Recipes</h2>
-                <a href="#">Return To Ingredients</a>
+                <a href="" id="returntotop">Return To Ingredients</a>
 
 
             </div>
@@ -68,6 +65,26 @@
 
 </div>
 
-<script src="js/jquery-3.2.1.js"></script>
+
+<script>
+    //                        $('#submit').onclick(function()
+    //
+    //                        {
+    //                            $('#submit').animate({
+    //                                scrollBottom: target.offset().bottom}
+    //                                ,5000,)
+    //                            }
+    //                        })
+    $('.midparallax').hide();
+    $('.botparallax').hide();
+    $("#submit").click(function() {
+        $('.midparallax').show();
+        $('.botparallax').show();
+        $('html, body').animate({
+            scrollTop: $("#myDiv").offset().top
+        }, 1500);
+    });
+</script>
+
 </body>
 </html>
