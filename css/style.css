@@ -12,6 +12,10 @@ body{
     /*background-size: cover;*/
 
 }
+.botwlogo {
+    width:300px;
+    height:140px;
+}
 .topparallax{
     background-image: url("../img/linkholdingfood.jpg");
     height:1000px;
@@ -25,9 +29,21 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+.gifpicture{
+    height: 450px;
+    width: 750px;
+    background-image: url("../img/zelda.gif");
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:fixed;
+    left:490px;
+    top:235px;
+    display:none;
+}
 .midparallax{
-    background-image: url("../img/zeldacook.jpg");
-    height:1000px;
+    /*background-image: url("../img/zeldacook.jpg");*/
+    background-color:black;
+    height:10000px;
     width:100%;
     /* Full height */
 
@@ -79,7 +95,7 @@ select.select{
     display:flex;
     color:orange;
     height:140px;
-    opacity:0.7;
+    opacity:0.8;
 
 }
 h1.pagetitle{
@@ -123,7 +139,7 @@ p.instructions{
     width:92em;
     margin-top:5em;
     position:absolute;
-    opacity:0.7;
+    opacity:0.85;
 }
 
 .middlepage {
@@ -162,10 +178,14 @@ h2.formheader{
     margin-bottom:0;
 }
 .returndata{
+    display: none;
+    width: 92vw;
+    margin-left: 7em;
+    margin-top: 5em;
     background-color:black;
-    height:35em;
-    opacity:0.7;
+    height:60vh;
 }
+
 
 a#returntotop{
     font-size: 20px;
@@ -173,3 +193,81 @@ a#returntotop{
     color:#998866;
     margin-left:31.5em;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 480px) {
+    body{
+        text-align:center;}
+
+    .topparallax{width: 1600px;height: 2900px;}
+
+    /* Full height */
+
+
+        /* Create the parallax scrolling effect */
+        background-size: cover;
+    }
+
+
+    /* make method headers smaller */
+}
+@media only screen and (min-width: 481px) and (max-width: 720px)
+{
+    body{
+        text-align:center;
+    }
+    .topparallax{width: 1600px;height: 2900px;}
+
+
+@media only screen and (min-width: 720px) and (max-width: 1028px) {
+    body {
+        text-align: center;
+    }
+
+    h1.pagetitle {
+        font-family: Hylia;
+        color: #998866;
+        font-size: 125px;
+        text-align: center;
+        margin-left: 1em;
+    }
+
+    img {
+        width: 500px;
+        height: 350px;
+    }
+
+    .topparallax {
+        width: 1600px;
+        height: 2900px;
+    }
+
+    .formstyle {
+        background-color: black;
+        height: 100em;
+        margin-top: 40em;
+        position: absolute;
+        opacity: 0.85;
+        margin-left: 0;
+        width: 100em;
+    }
+
+    .socialmedia {
+        background-color: black;
+        width: 100em;
+        color: orange;
+        height: 25em;
+        margin-top: 150em;
+        position: fixed;
+    }
+
+    .navigation {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        height: 22em;
+        opacity: 0.8;
+    }
+}
+

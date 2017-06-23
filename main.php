@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zelda | Cooking Recipes</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
 <div class="zelda">
     <div class="topparallax">
         <div class="navigation">
-            <img src="img/title.jpg" style="width:300px; height:140px;">
+            <img class="botwlogo" src="img/title.jpg">
             <h1 class="pagetitle">Cooking Recipes</h1>
         </div>
         <div class="middlepage">
@@ -37,54 +37,77 @@
                     <button id="submit" name="submit">Let's Cook!</button>
                 </form>
             </div>
-        </div>
-    </div>
-    <div class="midparallax">
-        <div class="parallaxpicture">
-
-        </div>
-    </div>
-    <div class="botparallax">
-        <br><br><br><br><br><br><br><br><br><br>
-        <br><br><br><br><br>
-        <div id="myDiv"></div>
-        <br><br><br><br><br>
-        <div class="bottompage">
-
             <div class="returndata">
-                <?php // return the results from a selected ingredient / ingredients?>
+                <?php
+
+                $pdo = new PDO('mysql:host=localhost;dbname=zelda;charset=utf8', 'root', 'rootroot');
+
+                $stmt = $pdo->prepare('SELECT ingredients FROM zelda');
+                $stmt->execute();
+                $tags = $stmt->fetchAll();
+                var_dump($stmt->fetchAll());
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+                ?>
                 <h2 class="formheader">Recipes</h2>
                 <a href="" id="returntotop">Return To Ingredients</a>
 
 
+
             </div>
-
         </div>
+        <div class="gifpicture"></div>
     </div>
-
-
 </div>
 
 
 <script>
-    //                        $('#submit').onclick(function()
-    //
-    //                        {
-    //                            $('#submit').animate({
-    //                                scrollBottom: target.offset().bottom}
-    //                                ,5000,)
-    //                            }
-    //                        })
-    $('.midparallax').hide();
-    $('.botparallax').hide();
-    $("#submit").click(function() {
-        $('.midparallax').show();
-        $('.botparallax').show();
-        $('html, body').animate({
-            scrollTop: $("#myDiv").offset().top
-        }, 1500);
+//    $(document).ready(function(){
+//        $('.midparallax').hide();
+//        $('.botparallax').hide();
+//        $("#submit").click(function() {
+//            $('.gifpicture').show();
+//            $('.midparallax').show();
+//            $('.botparallax').show();
+//            $('html, body').animate({
+//                scrollTop: $("#myDiv").offset().top
+//            }, 5000);
+//            function hideDiv(){
+//                $('.gifpicture').hide();
+//                $('.midparallax').hide();
+//                $('.botparallax').hide();
+//            }
+//        });
+//    });
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                $('.formstyle').fadeOut(2000);
+                $('.gifpicture').fadeIn(3000).fadeOut(2000);
+                $('.returndata').show(2000).fadeIn(8000);
+
+            })
+        });
+
+</script>
+<!-- The JavaScript -->
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('ul.nav a').bind('click',function(event){
+            var $anchor = $(this);
+            /*
+             if you want to use one of the easing effects:
+             $('html, body').stop().animate({
+             scrollLeft: $($anchor.attr('href')).offset().left
+             }, 1500,'easeInOutExpo');
+             */
+            $('html, body').stop().animate({
+                scrollLeft: $($anchor.attr('href')).offset().left
+            }, 1000);
+            event.preventDefault();
+        });
     });
 </script>
-
 </body>
 </html>
