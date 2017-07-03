@@ -1,3 +1,9 @@
+/* INCLUDE HYLIA FONT */
+
+@font-face {
+    font-family:Hylia;
+    src: url('../Hylia/Hylia.otf')
+}
 body{
     /* The image used */
     /*background-image: url("../img/linkholdingfood.jpg");*/
@@ -10,7 +16,6 @@ body{
     /*background-position: center;*/
     /*background-repeat: no-repeat;*/
     /*background-size: cover;*/
-
 }
 .botwlogo {
     width:300px;
@@ -20,6 +25,7 @@ body{
     background-image: url("../img/linkholdingfood.jpg");
     height:1000px;
     width:100%;
+    overflow-x:hidden;
     /* Full height */
 
 
@@ -40,41 +46,10 @@ body{
     top:235px;
     display:none;
 }
-.midparallax{
-    /*background-image: url("../img/zeldacook.jpg");*/
-    background-color:black;
-    height:10000px;
-    width:100%;
-    /* Full height */
 
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.botparallax{
-    background-image: url("../img/zeldafinish.jpg");
-    height:1000px;
-    width:100%;
-
-    /* Full height */
 
 
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-
-}
-/* INCLUDE HYLIA FONT */
-@font-face {
-    font-family:Hylia;
-    src: url('../Hylia/Hylia.otf')
-}
 button#submit{
     bottom:0;
     margin-left:63em;
@@ -88,6 +63,13 @@ select.select{
     background-color:#998866;
     font-family:Hylia;
     font-size:20px;
+    width:10em; height:2em;  margin-left:18em; margin-top:3.5em;
+}
+select.select2{
+    background-color:#998866;
+    font-family:Hylia;
+    font-size:20px;
+    width:10em; height:2em;  margin-left:4em
 }
 .navigation{
     background-color:black;
@@ -119,14 +101,14 @@ p.instructions{
     text-align:center;
 }
 .cookingpot{
-
+    width: 250px;
+    height: 200px;
     float:right;
 }
 
 .socialmedia{
     background-color:black;
     width:4.5em;
-    color:orange;
     height:28em;
     margin-top:5em;
     position:fixed;
@@ -142,20 +124,11 @@ p.instructions{
     opacity:0.85;
 }
 
-.middlepage {
-    width: 100%;
-    display: flex;
-}
+
 .parallax{
     width:91.7%;
     margin-left:7em;
     margin-right:7em;
-}
-.parallaxpicture{
-
-
-}
-.pictures {
 }
 
 h2.formheader{
@@ -184,6 +157,7 @@ h2.formheader{
     margin-top: 5em;
     background-color:black;
     height:60vh;
+    position:absolute;
 }
 
 
@@ -199,75 +173,199 @@ a#returntotop{
 @media only screen and (max-width: 480px) {
     body{
         text-align:center;}
+    .cookingpot{
+        display:none;
+    }
+    .navigation{
+        width: 127vw;
+        height: 15vh;
+    }
 
-    .topparallax{width: 1600px;height: 2900px;}
+    .topparallax{width: 480px;height: 900px;    background-position: 67%;}
+    .botwlogo{    width: 150px;
+        height: 80px;   }
+    h1.pagetitle{
+        font-size: 35px;
+        margin-top: 0.5em;
+        padding-right: 0;
+        margin-left: 0;
+    }
+    h1.formheader{
+        font-size:20px;
+        padding-left:0;
+        text-align:center;
+    }
+    h2.formheader{
+        font-size:20px;
+        text-align:center;
+        padding-left:0;
+        margin:0 auto;
+    }
+    p.instructions{
+        font-size:14px;
+    }
+
+    .gifpicture{
+        width:60vw; height:40vh;position:center;
+    }
+    .formstyle{width:127vw; height:75vh; margin-left:0;}
+    .returndata{width:127vw; height:75vh; margin-left:0;}
+    a#returntotop{margin-left:0; text-align:center; font-size:12px;}
+
+    button#submit{
+
+        margin:0 auto;
+    }
+    .socialmedia {
+        background-color: black;
+        width: 127vw;
+        height: 5vh;
+        margin-top: 37em;
+    }
+
+    select.select{
+        background-color:#998866;
+        font-family:Hylia;
+        font-size:20px;
+margin-bottom:1em;   margin-left:0; margin-top:1em;}
+    select.select2{
+        background-color:#998866;
+        font-family:Hylia;
+        font-size:20px;
+        margin-bottom:1em;
+    margin-right:4em;}
+
+
+
 
     /* Full height */
 
 
         /* Create the parallax scrolling effect */
-        background-size: cover;
-    }
 
 
     /* make method headers smaller */
 }
-@media only screen and (min-width: 481px) and (max-width: 720px)
-{
-    body{
-        text-align:center;
-    }
-    .topparallax{width: 1600px;height: 2900px;}
-
-
-@media only screen and (min-width: 720px) and (max-width: 1028px) {
+@media only screen and (min-width: 481px) and (max-width: 720px) {
     body {
         text-align: center;
-    }
+        width: 900px;
+        height: 1100px;
+        overflow-x:visible;
 
+    }
     h1.pagetitle {
         font-family: Hylia;
         color: #998866;
-        font-size: 125px;
-        text-align: center;
-        margin-left: 1em;
+        font-size: 60px;
+        margin: 0 1em 1em 1em;
     }
-
-    img {
-        width: 500px;
-        height: 350px;
+    .botwlogo {
+        width: 220px;
+        height: 140px;
     }
-
     .topparallax {
-        width: 1600px;
-        height: 2900px;
+        width: 900px;
+        height: 1100px;
     }
+    .formstyle{
+        width:140vw;
+    }
+    h1.formheader{
+        font-size:30px;
+        padding-left:0;
+    }
+    p.instructions {
+        font-size: 16px;
+        text-align: center;
+    }
+    img.cookingpot {
+        float: right;
+        width: 160px;
+        height: 120px;
+        margin-top:2em;
+        margin-right:18em;
+    }
+    .ingredientform{
+        display:flex;
+        text-align:center;
+    }
+    select.select {
+        background-color: #998866;
+        font-family: Hylia;
+        font-size: 20px;
+        width: 8em;
+        height: 2em;
+        margin-left:5em;
+        margin-top:10em;
+    }
+    select.select2 {
+        background-color: #998866;
+        font-family: Hylia;
+        font-size: 20px;
+        width: 8em;
+        height: 2em;
+        margin-top:10em;
 
-    .formstyle {
-        background-color: black;
-        height: 100em;
-        margin-top: 40em;
-        position: absolute;
-        opacity: 0.85;
-        margin-left: 0;
-        width: 100em;
     }
+    button#submit {
+        position:absolute;
+        margin-left: 32.5em;
+        font-family: Hylia;
+        background-color: #998866;
+    }
+}
+@media only screen and (min-width: 720px) and (max-width: 1028px) {
+    /*body {*/
+        /*text-align: center;*/
+    /*}*/
+
+    /*h1.pagetitle {*/
+        /*font-family: Hylia;*/
+        /*color: #998866;*/
+        /*font-size: 125px;*/
+        /*text-align: center;*/
+        /*margin-left: 1em;*/
+    /*}*/
+
+    /*img {*/
+        /*width: 500px;*/
+        /*height: 350px;*/
+    /*}*/
+
+    /*.topparallax {*/
+        /*width: 1600px;*/
+        /*height: 2900px;*/
+    /*}*/
+
+    /*.formstyle {*/
+        /*background-color: black;*/
+        /*height: 100em;*/
+        /*margin-top: 40em;*/
+        /*position: absolute;*/
+        /*opacity: 0.85;*/
+        /*margin-left: 0;*/
+        /*width: 100em;*/
+    /*}*/
 
     .socialmedia {
         background-color: black;
         width: 100em;
-        color: orange;
         height: 25em;
         margin-top: 150em;
         position: fixed;
     }
 
-    .navigation {
-        background-color: black;
-        width: 100%;
-        display: flex;
-        height: 22em;
-        opacity: 0.8;
-    }
+    /*.navigation {*/
+        /*background-color: black;*/
+        /*width: 100%;*/
+        /*display: flex;*/
+        /*height: 22em;*/
+        /*opacity: 0.8;*/
+    /*}*/
 }
+
+
+
+
 
