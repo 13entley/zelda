@@ -47,7 +47,10 @@ body{
     display:none;
 }
 
-
+.ingredientform{
+    position: absolute;
+    top: 6em;
+}
 
 
 button#submit{
@@ -88,11 +91,12 @@ h1.pagetitle{
     padding-right:3em;
 }
 h1.formheader{
-    font-family:Hylia;
-    color:#998866;
-    font-size:60px;
-    margin:0 auto;
-    padding-left:6.5em;
+    font-family: Hylia;
+    color: #998866;
+    font-size: 60px;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
 }
 p.instructions{
     font-family:Hylia;
@@ -105,7 +109,10 @@ p.instructions{
     height: 200px;
     float:right;
 }
-
+.cookingpot2{
+    width: 250px;
+    height: 200px;
+}
 .socialmedia{
     background-color:black;
     width:4.5em;
@@ -115,13 +122,17 @@ p.instructions{
 
 }
 .formstyle{
-    background-color:black;
-    height:28em;
-    margin-left:7em;
-    width:92em;
-    margin-top:5em;
-    position:absolute;
-    opacity:0.85;
+    background-color: black;
+    height: 54vh;
+    margin-top: 5em;
+    opacity: 0.85;
+    width: 100vw;
+    display:flex;
+}
+.formstyleheader {
+    align-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 
@@ -132,11 +143,12 @@ p.instructions{
 }
 
 h2.formheader{
-    font-family:Hylia;
-    color:#998866;
-    font-size:60px;
-    margin:0 auto;
-    padding-left:10.5em;
+    font-family: Hylia;
+    color: #998866;
+    font-size: 60px;
+    margin: 0 auto;
+    padding-left: 9.7em;
+
 }
 
 
@@ -152,28 +164,68 @@ h2.formheader{
 }
 .returndata{
     display: none;
-    width: 92vw;
-    margin-left: 7em;
-    margin-top: 5em;
-    background-color:black;
-    height:60vh;
-    position:absolute;
+    width: 90vw;
+    margin-left: 5em;
+    margin-top: 2.7em;
+    background-color: black;
+    height: 54vh;
+    position: absolute;
+    font-size: 30px;
+    font-family: Hylia;
+    color: #998866;
+    overflow: auto;
 }
 
 
 a#returntotop{
     font-size: 20px;
-    font-family:Hylia;
-    color:#998866;
-    margin-left:31.5em;
+    font-family: Hylia;
+    color: #998866;
+    margin-left: 29.1em;
+    text-decoration: underline;
+}
+#dishreturn{
+    text-align:center;
+}
+#list td{
+    vertical-align:bottom;
+    font-size:20px;
+}
+.dish{
+    font-size:20px;
+}
+.ingredient{
+    font-size:16px;
+    width:200px;
+}
+table, th, td {
+    border: 2px solid #998866;
+    color:white;
+}
+.effect{
+    font-size:12px;
+}
+#elixirreturn{
+    text-align:center;
 }
 
+.footer{
+    z-index:1;
+    position:absolute;
+}
+.bitlink{
+    height:200px;
+    width:150px;
+    margin-left: 25em;
+    margin-top: 20em;
+}
+}
 /* Media Queries */
 
 @media only screen and (max-width: 480px) {
     body{
         text-align:center;}
-    .cookingpot{
+    .cookingpot, .cookingpot2{
         display:none;
     }
     .navigation{
@@ -316,37 +368,37 @@ margin-bottom:1em;   margin-left:0; margin-top:1em;}
     }
 }
 @media only screen and (min-width: 720px) and (max-width: 1028px) {
-    /*body {*/
-        /*text-align: center;*/
-    /*}*/
+    body {
+        text-align: center;
+    }
 
-    /*h1.pagetitle {*/
-        /*font-family: Hylia;*/
-        /*color: #998866;*/
-        /*font-size: 125px;*/
-        /*text-align: center;*/
-        /*margin-left: 1em;*/
-    /*}*/
+    h1.pagetitle {
+        font-family: Hylia;
+        color: #998866;
+        font-size: 125px;
+        text-align: center;
+        margin-left: 1em;
+    }
 
-    /*img {*/
-        /*width: 500px;*/
-        /*height: 350px;*/
-    /*}*/
+    img {
+        width: 500px;
+        height: 350px;
+    }
 
-    /*.topparallax {*/
-        /*width: 1600px;*/
-        /*height: 2900px;*/
-    /*}*/
+    .topparallax {
+        width: 1600px;
+        height: 2900px;
+    }
 
-    /*.formstyle {*/
-        /*background-color: black;*/
-        /*height: 100em;*/
-        /*margin-top: 40em;*/
-        /*position: absolute;*/
-        /*opacity: 0.85;*/
-        /*margin-left: 0;*/
-        /*width: 100em;*/
-    /*}*/
+    .formstyle {
+        background-color: black;
+        height: 100em;
+        margin-top: 40em;
+        position: absolute;
+        opacity: 0.85;
+        margin-left: 0;
+        width: 100em;
+    }
 
     .socialmedia {
         background-color: black;
@@ -356,13 +408,13 @@ margin-bottom:1em;   margin-left:0; margin-top:1em;}
         position: fixed;
     }
 
-    /*.navigation {*/
-        /*background-color: black;*/
-        /*width: 100%;*/
-        /*display: flex;*/
-        /*height: 22em;*/
-        /*opacity: 0.8;*/
-    /*}*/
+    .navigation {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        height: 22em;
+        opacity: 0.8;
+    }
 }
 
 

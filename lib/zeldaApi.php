@@ -1,66 +1,32 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: 13entley
+ * Date: 7/3/17
+ * Time: 8:29 PM
+ */
 
-namespace api;
 
+namespace Api;
 use \PDO;
 
-class personsApi extends api
+class ZeldaApi
 {
-    // get info about a person
-    public function search($search_term)
+    public static $pdo = null;
+
+    public function __construct()
     {
-        $query = "
-            SELECT *
-            FROM imdb_person
-            WHERE imdb_person.fullname LIKE ?
-            ORDER BY imdb_person.imdb_id ASC
-            LIMIT 0,12
-        ";
+        $ini_data = parse_ini_file(__DIR__.'/../.env');
 
-        $statement = static::$pdo->prepare($query);
-
-        $statement->execute(['%'.$search_term.'%']);
-
-        $statement->setFetchMode(PDO::FETCH_OBJ);
-
-        return $statement->fetchAll();
-    }
-
-    // get info about all the choices in a chapter
-    public function getChoicesForChapter($chapter_id)
-    {
-        $query = "
-            SELECT `choice`.*
-            FROM `choice`
-            WHERE `choice`.`chapter_id` = ?
-            ORDER BY `choice`.`order` ASC
-        ";
-
-        $statement = static::$pdo->prepare($query);
-
-        $statement->execute([$chapter_id]);
-
-        $statement->setFetchMode(PDO::FETCH_OBJ);
-
-        return $statement->fetchAll();
-    }
-
-    // get info about all the illustrations in a chapter
-    public function getIllustrationsForChapter($chapter_id)
-    {
-        $query = "
-            SELECT `illustration`.*
-            FROM `illustration`
-            WHERE `illustration`.`chapter_id` = ?
-            ORDER BY `illustration`.`order` ASC
-        ";
-
-        $statement = static::$pdo->prepare($query);
-
-        $statement->execute([$chapter_id]);
-
-        $statement->setFetchMode(PDO::FETCH_OBJ);
-
-        return $statement->fetchAll();
+        try {
+            static::$pdo = new PDO(
+                'mysql:dbname='.$ini_data['dbname'].';host='.$ini_data['dbhost'].';charset=utf8',
+                $ini_data['dbuser'],
+                $ini_data['dbpass']
+            );
+            static::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
     }
 }

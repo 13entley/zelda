@@ -1,23 +1,32 @@
 <?php
 ini_set("display_errors", "on");
 error_reporting(E_ALL);
+use Api\ZeldaApi;
+use Api\Zelda;
+require 'lib/ZeldaApi.php';
+require 'lib/Zelda.php';
 
-//$pdo = new PDO('mysql:host=localhost;dbname=ebentley;charset=utf8', 'ebentley', 'mjShYP#43');
-$pdo = new PDO('mysql:host=localhost;dbname=zelda;charset=utf8', 'root', 'rootroot');
+$ingredients = [];
+$elixirs = [];
+$dishes = [];
 
+$api = new ZeldaApi();
 
-$stmt = $pdo->prepare('SELECT ingredients FROM ingredients');
-$stmt->execute();
-$ingredients = $stmt->fetchAll();
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$zelda = new Zelda();
+$ingredients = $zelda->getIngredients();
+
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Zelda | Cooking Recipes</title>
 </head>
 <body>
@@ -27,7 +36,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         <div class="navigation">
             <img class="botwlogo" src="img/title.jpg">
             <h1 class="pagetitle">Cooking Recipes</h1>
-
+            <div class="links"><a href="tables/library.php">Library of Ingredients, Dishes, & Elixirs</a></div>
         </div>
         <div class="middlepage">
             <div class="socialmedia">
@@ -36,23 +45,29 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         allowTransparency="true"></iframe>
             </div>
             <div class="formstyle">
-                <h1 class="formheader">Select Your Ingredient(s)</h1>
-                <p class="instructions">
-                    Choose an ingredient below to show all recipes that you can make with
-                    that ingredient!
-                </p>
-                <img class="cookingpot" src="img/cookingpot.jpg">
+                <div class="formstyleheader">
+                    <h1 class="formheader">Select Your Ingredient(s)</h1>
+                      <p class="instructions">
+                            Choose an ingredient below to show all recipes that you can make with
+                            that ingredient!
+                      </p>
+                </div>
                 <form class="ingredientform">
-                    <select class="select" name="IngredientList">
+                    <select id="ingredientlist" class="select" name="IngredientList">
                         <option value="0">---------------</option>
-                        <?php foreach ($ingredients as $id => $ingredient): ?>
-                            <option value="<?php echo $id ?>">
-                                <?php echo $ingredient['ingredients'] ?>
+                        <?php foreach ($ingredients as $ingredient): ?>
+                            <option value="<?php echo $ingredient->id ?>">
+                                <?php echo $ingredient->name ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
-                    <select class="select2" name="IngredientList">
-                        <option value="Ingredient 2">Ingredient 2</option>
+                    <select id="ingredientlist" class="select" name="IngredientList">
+                        <option value="0">---------------</option>
+                        <?php foreach ($ingredients as $ingredient): ?>
+                            <option value="<?php echo $ingredient->id ?>">
+                                <?php echo $ingredient->name ?>
+                            </option>
+                        <?php endforeach; ?>
                     </select>
                     <select class="select2" name="IngredientList">
                         <option value="Ingredient 3">Ingredient 3</option>
@@ -63,44 +78,116 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 </form>
             </div>
             <div class="returndata">
-
                 <h2 class="formheader">Recipes</h2>
-                <a href="" id="returntotop">Return To Ingredients</a>
+                <a id="returntotop">Return To Ingredients</a>
+                <div class="container">
+                    <div id="dishreturn">DISHES</div>
+
+<!--                    <table id="list" cellpadding="0" cellspacing="0" border="0" class="display" id="dishes" width="100%">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Dishes</th>-->
+<!--                            <td>-->
+                                <div id="disheslist"></div>
+<!--                            </td>-->
+<!--                            <th>Effects</th>-->
+<!--                            <td></td>-->
+<!--                            <th>Ingredients</th>-->
+<!--                            <td></td>-->
+<!--                            <th>Notes</th>-->
+<!--                            <td></td>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                    </table>-->
+                    <div id="elixirreturn">ELIXIRS</div>
+<!--                    <table cellpadding="0" cellspacing="0" border="0" class="display" id="dishes" width="100%">-->
+<!--                        <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Elixir</th>-->
+<!--                            <td></td>-->
+<!--                            <th>Effects</th>-->
+<!--                            <td></td>-->
+                                <div id="elixirslist"></div>
+<!--                            <th>Ingredients</th>-->
+<!--                            <td></td>-->
+<!--                            <th>Notes</th>-->
+<!--                            <td></td>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                    </table>-->
+
+                </div>
 
 
             </div>
         </div>
         <div class="gifpicture"></div>
     </div>
+<!--    <div class="footer">-->
+<!--        <img class="bitlink" src="img/link_16_bit.png">-->
+<!--    </div>-->
 </div>
 
 
+
 <script>
-    //    $(document).ready(function(){
-    //        $('.midparallax').hide();
-    //        $('.botparallax').hide();
-    //        $("#submit").click(function() {
-    //            $('.gifpicture').show();
-    //            $('.midparallax').show();
-    //            $('.botparallax').show();
-    //            $('html, body').animate({
-    //                scrollTop: $("#myDiv").offset().top
-    //            }, 5000);
-    //            function hideDiv(){
-    //                $('.gifpicture').hide();
-    //                $('.midparallax').hide();
-    //                $('.botparallax').hide();
-    //            }
-    //        });
-    //    });
+    function loadIngredientData(id) {
+        $.ajax({
+            'url': 'dishesAjax.php',
+            'type': 'get',
+            'data': {
+                'id': id
+            }
+        })
+            .done(function (data) {
+                $('#disheslist').html(data)
+            });
+    }
+    function loadIngredientDataForElixirs(id) {
+        $.ajax({
+            'url': 'elixirsAjax.php',
+            'type': 'get',
+            'data': {
+                'id': id
+            }
+        })
+            .done(function (data) {
+                $('#elixirslist').html(data)
+            });
+    }
+    $(document).ready(function(){
+        $(".bitlink").click(function(){
+            $(".middlepage").fadeOut(5000);
+            $(".footer").fadeIn(3000);
+            $(".bitlink").animate({
+                left: '1000em;',
+                top: '500px',
+                height: '500px',
+                width: '350px'
+            });
+        })
+    });
+
     $(document).ready(function () {
         $("#submit").click(function () {
             $('.formstyle').fadeOut(2000);
+            let id = $('#ingredientlist').val();
+
+            loadIngredientData(id);
+            loadIngredientDataForElixirs(id);
+
+
             $('.gifpicture').fadeIn(3000).fadeOut(2000);
             $('.returndata').show(2000).fadeIn(8000);
-
+        });
+    });
+    $(document).ready(function () {
+        $("#returntotop").click(function(){
+        $('.returndata').fadeOut(3000);
+        $('.formstyle').fadeIn(3000);
         })
     });
+
 
 </script>
 

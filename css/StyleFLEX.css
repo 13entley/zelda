@@ -1,0 +1,141 @@
+@font-face {
+    font-family:Hylia;
+    src: url('../Hylia/Hylia.otf')
+}
+.zelda{
+    width:100%;
+    height:1000px;
+    background-image: url("../img/linkholdingfood.jpg");
+    overflow-x:hidden;
+    /* Full height */
+
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header{
+    display:flex;
+    width:100%;
+    height:15%;
+    background-color:black;
+    justify-content: space-between;
+}
+.logo{
+    width:300px;
+    height:140px;
+    justify-content:flex-start;
+}
+.title{
+    justify-content:center;
+    width:100%;
+    align-content:center;
+
+}
+.page_title{
+    font-family:Hylia;
+    color:#998866;
+    font-size:100px;
+    margin-top:0;
+}
+
+.middle_page_container{
+    display:flex;
+    width:100%;
+    height:60%;
+    background-color:black;
+    margin-top:5em;
+}
+.middle_page_select{
+    align-content: center;
+    text-align: center;
+    width: 100%;
+}
+.form_title{
+    font-family:Hylia;
+    color:#998866;
+}
+.form_instructions{
+    font-family:Hylia;
+    color:#998866;
+}
+.ingredientform{
+    flex-direction:row;
+    margin-top:5em;
+}
+select.select{
+    background-color: #998866;
+    font-family: Hylia;
+    font-size: 20px;
+    width: 10em;
+    height: 2em;
+}
+#submit{
+    height: 50px;
+    width: 100px;
+    font-family: Hylia;
+    background-color: #998866;
+}
+.return_container{
+    display: none;
+    width: 100%;
+    height: 60%;
+    background-color: black;
+    margin-top: 5em;
+    overflow: auto;
+}
+.middle_page_return {
+    align-content: center;
+    font-family: Hylia;
+    width: 100%;
+}
+
+h2.formheader{
+    font-size: 60px;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    color: #998866;
+    margin-top: 0;
+}
+a#returntotop{
+    display:block;
+    font-size: 20px;
+    font-family: Hylia;
+    color: #998866;
+    text-decoration: underline;
+    justify-content: center;
+    text-align:center;
+}
+.dish_container{
+    overflow: auto;
+    display:flex;
+}
+#dishreturn{
+    color: #998866;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 1em;
+}
+#disheslist{
+    align-content:center;
+    text-align:center;
+    margin:0 auto;
+}
+
+.dish{
+    font-size:20px;
+}
+.ingredient{
+    font-size:16px;
+    width:200px;
+}
+table, th, td {
+    border: 2px solid #998866;
+    color:white;
+}
+.effect{
+    font-size:12px;
+}

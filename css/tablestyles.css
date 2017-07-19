@@ -1,0 +1,16 @@
+@font-face {
+    font-family:Hylia;
+    src: url('../Hylia/Hylia.otf')
+}
+table, th, td {
+    border: 1px solid black;
+    font-family:Hylia;
+    border-color:#998866;
+    background-color:black;
+    font-size:16px;
+    color:white;
+
+}
+#list td{
+    vertical-align:bottom;
+}
