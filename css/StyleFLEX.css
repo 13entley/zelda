@@ -47,6 +47,7 @@
     height:60%;
     background-color:black;
     margin-top:5em;
+    opacity:0.85;
 }
 .middle_page_select{
     align-content: center;
@@ -54,8 +55,9 @@
     width: 100%;
 }
 .form_title{
-    font-family:Hylia;
-    color:#998866;
+    font-family: Hylia;
+    color: #998866;
+    margin-top: 4em;
 }
 .form_instructions{
     font-family:Hylia;
@@ -71,11 +73,15 @@ select.select{
     font-size: 20px;
     width: 10em;
     height: 2em;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    text-align:center;
 }
 #submit{
     height: 50px;
     width: 100px;
     font-family: Hylia;
+    margin-top: 4em;
     background-color: #998866;
 }
 .return_container{
@@ -132,10 +138,25 @@ a#returntotop{
     font-size:16px;
     width:200px;
 }
+.effect{
+    font-size:12px;
+}
 table, th, td {
     border: 2px solid #998866;
     color:white;
 }
-.effect{
-    font-size:12px;
+#elixirreturn{
+    text-align: center;
+    color: #998866;
+    font-size: 40px;
+    margin-top: 1em;
+}
+#elixirslist{
+    align-content:center;
+    text-align:center;
+    margin:0 auto;
+}
+.elixir_container{
+    overflow: auto;
+    display:flex;
 }

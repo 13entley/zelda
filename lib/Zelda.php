@@ -70,14 +70,14 @@ class Zelda extends ZeldaApi
 
     public function getElixirsForIngredient($x_ingredient_id)
     {
-        $query = "
+        $elixirQuery = "
     SELECT `elixirs`.*
     FROM `elixir_has_ingredient`
     LEFT JOIN `elixirs`
     ON `elixir_has_ingredient`.`elixirs_id` = `elixirs`.`id`
     WHERE `elixir_has_ingredient`.`ingredient_id` = ?
     ";
-        $stmt = static::$pdo->prepare($query);
+        $stmt = static::$pdo->prepare($elixirQuery);
         $stmt->execute([$x_ingredient_id]);
         $stmt->setFetchMode(PDO::FETCH_OBJ);
         $elixirs = $stmt->fetchAll();
@@ -89,10 +89,10 @@ class Zelda extends ZeldaApi
     {
         if(!$elixir_ids) return [];
 
-        // create a string like (1, 2, 3, 4) from the $dish_ids
+        // create a string like (1, 2, 3, 4) from the $elixir_ids
         $elixir_ids_string = '(' . join(', ', $elixir_ids) . ')';
 
-        // select all ingredients for all the dishes selected above
+        // select all ingredients for all the elixirs selected above
         $next_query = "
     SELECT `ingredients`.*,
         `elixir_has_ingredient`.`elixirs_id`, `elixir_has_ingredient`.`quantity`

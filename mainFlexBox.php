@@ -51,10 +51,7 @@ $ingredients = $zelda->getIngredients();
                 that ingredient!
             </p>
             <form class="ingredientform">
-                <select id="ingredientlist" class="select" name="IngredientList"><option value="0">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select>
-                <select id="ingredientlist" class="select" name="IngredientList"><option value="1">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select>
-                <select id="ingredientlist" class="select" name="IngredientList"><option value="2">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select>
-
+                <select id="ingredientlist" class="select" name="IngredientList"><option value="0">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select><select id="ingredientlist" class="select" name="IngredientList"><option value="1">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select><select id="ingredientlist" class="select" name="IngredientList"><option value="2">---------------</option><?php foreach ($ingredients as $ingredient): ?><option value="<?php echo $ingredient->id ?>"><?php echo $ingredient->name ?></option><?php endforeach; ?></select>
                 <br><br>
                 <button id="submit" type="button" name="submit">Let's Cook!</button>
             </form>
@@ -70,8 +67,8 @@ $ingredients = $zelda->getIngredients();
             <div class="dish_container">
                 <div id="disheslist"></div>
             </div>
-            <div class="elixir_container"
-                <div id="elixirreturn">ELIXIRS</div>
+            <div id="elixirreturn">ELIXIRS</div>
+            <div class="elixir_container">
                 <div id="elixirslist"></div>
             </div>
         </div>
@@ -116,7 +113,7 @@ $ingredients = $zelda->getIngredients();
 
 
             $('.gifpicture').fadeIn(3000).fadeOut(2000);
-            $('.return_container').show().fadeIn(8000);
+            $('.return_container').fadeIn(8000);
         });
     });
     $(document).ready(function () {
