@@ -1,7 +1,7 @@
 # select dishes
 
 
-<?php
+<?php/*
 function getDishesForIngredient($x_ingredient_id)
 {
     $query = "

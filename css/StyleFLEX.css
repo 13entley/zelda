@@ -37,8 +37,8 @@
 .page_title{
     font-family:Hylia;
     color:#998866;
-    font-size:100px;
-    margin-top:0;
+    font-size:95px;
+    margin-top:15px;
 }
 
 .middle_page_container{
@@ -141,6 +141,11 @@ a#returntotop{
 .effect{
     font-size:12px;
 }
+.notes{ width:450px;
+}
+.elixir_notes{
+    width:200px;
+}
 table, th, td {
     border: 2px solid #998866;
     color:white;
@@ -159,4 +164,296 @@ table, th, td {
 .elixir_container{
     overflow: auto;
     display:flex;
+}
+
+
+@media only screen and (max-width: 480px) {
+    .zelda{
+        width:100%;
+        height:1200px;
+        overflow-x:hidden;
+    }
+    .page_title{
+
+        margin-top:10px;
+        font-size: 25px;
+        width:100%;
+    }
+    .logo{
+        width:120px;
+        height:80px;
+    }
+    .header{
+        width:100%;
+        height:7%;
+        text-align: center;
+    }
+    #submit {
+        display: inline-block;
+    }
+    select.select{
+        font-size: 20px;
+        width: 10em;
+        height: 2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+    #dishreturn {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+
+    .dish{
+        font-size:12px;
+
+    }
+    .ingredient{
+        font-size:10px;
+        width:60px;
+    }
+    .effect{
+        font-size:8px;
+    }
+    .notes{
+        width:150px;
+        font-size:12px;
+    }
+    .elixir_notes{
+        width:100px;
+    }
+    table, th, td {
+        border: 1px solid #998866;
+        color:white;
+    }
+    #elixirreturn{
+        text-align: center;
+        color: #998866;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+    h2.formheader{
+        font-size: 35px;
+    }
+    a#returntotop{
+        font-size: 15px;
+    }
+}
+
+
+
+@media only screen and (min-width: 481px) and (max-width: 720px) {
+    .zelda{
+        width:100%;
+        height:1200px;
+        overflow-x:hidden;
+    }
+    .page_title{
+        margin-top:17px;
+        font-size: 35px;
+        width:100%;
+    }
+    .logo{
+        width:150px;
+        height:100px;
+    }
+    .header{
+        width:100%;
+        height:9%;
+        text-align: center;
+    }
+    #submit {
+        display: inline-block;
+    }
+    select.select{
+        font-size: 20px;
+        width: 10em;
+        height: 2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+    #dishreturn {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+
+    .dish{
+        font-size:14px;
+
+    }
+    .ingredient{
+        font-size:12px;
+        width:60px;
+    }
+    .effect{
+        font-size:10px;
+    }
+    .notes{
+        width:150px;
+        font-size:14px;
+    }
+    .elixir_notes{
+        width:150px;
+    }
+    table, th, td {
+        border: 1px solid #998866;
+        color:white;
+    }
+    #elixirreturn{
+        text-align: center;
+        color: #998866;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+    h2.formheader{
+        font-size: 35px;
+    }
+    a#returntotop{
+        font-size: 20px;
+    }
+
+}
+
+
+
+
+@media only screen and (min-width: 720px) and (max-width: 1028px) {
+
+    .page_title{
+        margin-top:24px;
+        font-size: 55px;
+        width:100%;
+    }
+    .logo{
+        width:160px;
+        height:120px;
+    }
+    .header{
+        width:100%;
+        height:12%;
+        text-align: center;
+    }
+    #submit {
+        display: inline-block;
+    }
+    select.select{
+        font-size: 20px;
+        width: 10em;
+        height: 2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+    #dishreturn {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+
+    .dish{
+        font-size:14px;
+        width:125px;
+
+    }
+    .ingredient{
+        font-size:10px;
+        width:90px;
+    }
+    .effect{
+        font-size:8px;
+        width:60px;
+    }
+    .notes{
+        width:150px;
+        font-size:10px;
+    }
+    .elixir_notes{
+        width:150px;
+        font-size:12px;
+    }
+    table, th, td {
+        border: 1px solid #998866;
+        color:white;
+    }
+    #elixirreturn{
+        text-align: center;
+        color: #998866;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+    h2.formheader{
+        font-size: 35px;
+    }
+    a#returntotop{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1029px) and (max-width: 1320px) {
+    .page_title{
+        margin-top:30px;
+        font-size: 65px;
+        width:100%;
+    }
+    .logo{
+        width:240px;
+        height:140px;
+    }
+    .header{
+        width:100%;
+        height:15%;
+        text-align: center;
+    }
+    #submit {
+        display: inline-block;
+    }
+    select.select{
+        font-size: 20px;
+        width: 10em;
+        height: 2em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+    #dishreturn {
+        text-align: center;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+
+    .dish{
+        font-size:14px;
+        width:125px;
+
+    }
+    .ingredient{
+        font-size:10px;
+        width:90px;
+    }
+    .effect{
+        font-size:8px;
+        width:60px;
+    }
+    .notes{
+        width:150px;
+        font-size:10px;
+    }
+    .elixir_notes{
+        width:150px;
+        font-size:12px;
+    }
+    table, th, td {
+        border: 1px solid #998866;
+        color:white;
+    }
+    #elixirreturn{
+        text-align: center;
+        color: #998866;
+        font-size: 20px;
+        margin-top: 1em;
+    }
+    h2.formheader{
+        font-size: 35px;
+    }
+    a#returntotop{
+        font-size: 20px;
+    }
 }

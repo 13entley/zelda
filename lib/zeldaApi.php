@@ -16,7 +16,7 @@ class ZeldaApi
 
     public function __construct()
     {
-        $ini_data = parse_ini_file(__DIR__.'/../.env');
+        $ini_data = parse_ini_file(__DIR__ . '/../.env');
 
         try {
             static::$pdo = new PDO(

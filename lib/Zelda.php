@@ -93,7 +93,7 @@ class Zelda extends ZeldaApi
         $elixir_ids_string = '(' . join(', ', $elixir_ids) . ')';
 
         // select all ingredients for all the elixirs selected above
-        $next_query = "
+        $last_query = "
     SELECT `ingredients`.*,
         `elixir_has_ingredient`.`elixirs_id`, `elixir_has_ingredient`.`quantity`
     FROM `elixir_has_ingredient`
@@ -101,10 +101,11 @@ class Zelda extends ZeldaApi
     ON `elixir_has_ingredient`.`ingredient_id` = `ingredients`.`id`
     WHERE `elixir_has_ingredient`.`elixirs_id` IN {$elixir_ids_string}
     ";
-        $stmt = static::$pdo->prepare($next_query);
+        $stmt = static::$pdo->prepare($last_query);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_OBJ);
         $ingredients = $stmt->fetchAll();
+
 
 
 
@@ -112,11 +113,9 @@ class Zelda extends ZeldaApi
 
         foreach ($ingredients as $ingredient) {
             $ingredients_by_elixir[$ingredient->elixirs_id][] = $ingredient;
-            return $ingredients_by_elixir;
         }
 
         return $ingredients_by_elixir;
-
     }
 
 

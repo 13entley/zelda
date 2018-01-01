@@ -66,6 +66,18 @@ $ingredients_by_dish = $zelda->getIngredientsForDishIds($dish_ids);
         </div>
     </td>
     <br>
+    <td>
+        <div class="strength">
+            <?php echo($dish->strength)?>
+        </div>
+    </td>
+    <br>
+    <td>
+        <div class="duration">
+            <?php echo($dish->duration)?>
+        </div>
+    </td>
+
 </tr>
 <?php endforeach; ?>
 

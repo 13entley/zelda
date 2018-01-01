@@ -64,11 +64,16 @@ $ingredients_by_elixir = $zelda->getIngredientsForElixirIds($elixir_ids);
         <br>
         <!--    <th>Notes</th>-->
         <td>
-            <div class="notes">
+            <div class="elixir_notes">
                 <?php echo($elixir->notes)?>
             </div>
         </td>
         <br>
+        <td>
+            <div class="duration">
+                Duration:<br><?php echo($elixir->duration)?>
+            </div>
+        </td>
     </tr>
 <?php endforeach; ?>
 
